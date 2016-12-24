@@ -1,7 +1,4 @@
-import random
-import time
-from Klassen.Aufgabe import Aufgabe
-
+import Aufgabe
 
 class Spiel:
 
