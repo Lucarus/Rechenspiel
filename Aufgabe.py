@@ -13,7 +13,7 @@ class Aufgabe:
 
     def __init__(self, aufgabe):
         random.seed()
-        self.startZeit = time.localtime()
+        self.startZeit = time.time()
         self.a = random.randint(10, 30)
         self.b = random.randint(10, 30)
         self.ergebnis = self.a + self.b
@@ -31,7 +31,7 @@ class Aufgabe:
                 eingabe = int(input())
                 if self.ergebnis == eingabe:
                     print("+++ R I C H T I G +++")
-                    self.endZeit = time.localtime()
+                    self.endZeit = time.time()
                     return 1
                 else:
                     print("Falsch, nochmal...")
