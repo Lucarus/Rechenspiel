@@ -1,6 +1,0 @@
-
-import Spiel
-
-s = Spiel
-
-

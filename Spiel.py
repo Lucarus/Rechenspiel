@@ -1,25 +1,26 @@
-import Aufgabe
+from Aufgabe import Aufgabe
+import time
 
-class Spiel:
+aufgaben_menge = 0
+fehl_eingaben = 0
+aufgaben_zeit = time.mktime((0, 0, 0, 0, 0, 0, 0, 0, 0))
 
-    aufgaben_menge = 0
-    fehl_eingaben = 0
+print("Menge an Fragen eingeben:")
+while aufgaben_menge <= 0 or aufgaben_menge >= 30:
+    try:
+        aufgaben_menge = int(input())
+    except:
+        continue
 
-    def __init__(self):
-        print("Menge an Fragen eingeben:")
-        while self.aufgaben_menge <= 0 or self.aufgaben_menge >= 30:
-            try:
-                self.aufgaben_menge = int(input())
-            except:
-                continue
+for i in range(1, aufgaben_menge + 1):
+    aufgabe = Aufgabe(i)
+    print(aufgabe)
+    aufgabe.beantworten()
 
-        for i in range(1, self.aufgaben_menge + 1):
-            aufgabe = Aufgabe(i)
-            aufgabe.beantworten()
+    fehl_eingaben += aufgabe.get_fehler()
 
-            self.fehl_eingaben += aufgabe.get_fehler()
-
-        print("Fertig!")
-        print("Auswertung:")
-        print("Aufgaben: " + self.aufgaben_menge)
-        print("Fehler: " + self.fehl_eingaben)
+print("Fertig!")
+print("Auswertung:")
+print("Aufgaben: " + str(aufgaben_menge))
+print("Fehler: " + str(fehl_eingaben))
+print(aufgaben_zeit)

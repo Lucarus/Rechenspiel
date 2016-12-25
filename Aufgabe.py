@@ -20,7 +20,7 @@ class Aufgabe:
         self.aufgabe = aufgabe
 
     def __str__(self):
-        return "Aufgabe " + self.aufgabe + ": " + self.a + " + " + self.b
+        return "Aufgabe " + str(self.aufgabe) + ": " + str(self.a) + " + " + str(self.b)
 
     def beantworten(self):
         eingabe = -1
@@ -34,7 +34,7 @@ class Aufgabe:
                     self.endZeit = time.localtime()
                     return 1
                 else:
-                    print("+++ F A L S C H +++")
+                    print("Falsch, nochmal...")
                     self.falscheingabe += 1
             except:
                 continue
